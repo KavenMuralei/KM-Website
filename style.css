@@ -1,0 +1,7 @@
+.taskbar{
+    border-style: groove;
+    padding: 20px;
+    width: 100%;
+    height: 5%;
+    position:top;
+}
