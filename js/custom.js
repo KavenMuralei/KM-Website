@@ -74,7 +74,7 @@ particlesJS("bg", {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "push"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
