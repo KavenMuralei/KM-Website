@@ -24,7 +24,6 @@ h1 {
     text-align: center;
     font-style: italic;
     padding-top:40vh;
-    z-index: 9990;
 }
 h3{
     color:#fff;
@@ -39,10 +38,22 @@ h3{
 }
 
 #bg {
-    position: absolute;
+    position:absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 0;
+    z-index: 1;
+}
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#nameHeaders{
+    z-index:2;
+    position:absolute;
+    top: -40%;
+    left: 20%;
 }
