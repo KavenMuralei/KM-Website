@@ -1,4 +1,4 @@
-import * as THREE from "../../../../node_modules/three/build/three.module.js";
+import * as THREE from "./../node_modules/three/build/three.module.js";
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1,1000);
@@ -22,6 +22,7 @@ const geometry2 = new THREE.SphereGeometry( 7, 16, 8 );
 const material2 = new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe:true } ); 
 const sphere = new THREE.Mesh( geometry2, material2 ); scene.add( sphere );
 scene.add(sphere)
+
 
 
 function animate(){
