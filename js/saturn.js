@@ -23,6 +23,7 @@ const material2 = new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe:true
 const sphere = new THREE.Mesh( geometry2, material2 ); scene.add( sphere );
 scene.add(sphere)
 
+
 function animate(){
   requestAnimationFrame(animate);
 
