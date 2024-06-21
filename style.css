@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(#000000,#434343 );  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(#000000,#434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 72px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+    padding-top:40vh;
+}
+h3{
+    color:#fff;
+    font-size: 36px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: medium;
+    text-align: center;
+    -webkit-text-stroke-width: 1%;
+    -webkit-text-stroke-color: black;
+}
+
+#bg {
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#nameHeaders{
+    z-index:2;
+    position:absolute;
+    top: -40%;
+    left: 20%;
+}
