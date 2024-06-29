@@ -16,35 +16,56 @@ canvas.height = canvas.width * heightRatio;
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+
+camera.position.set(-6, 1.5, 0)
+
+// axes helpers
+const axesHelper = new THREE.AxesHelper( 5 );
+scene.add( axesHelper );
 
 renderer.render(scene,camera);
 
-//Torus geometry
-const geometry = new THREE.TorusGeometry(13,1,2,100)
-const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
-const torus = new THREE.Mesh(geometry,material);
-torus.translateY(-5);
-scene.add(torus)
+//Ring geometry
+const ringTexture = new THREE.TextureLoader().load('https://i.postimg.cc/zz7Gr430/saturn-rings-top.png');
+const geometry = new THREE.RingGeometry(3, 5, 64);
+var pos = geometry.attributes.position;
+  var v3 = new THREE.Vector3();
+  for (let i = 0; i < pos.count; i++){
+    v3.fromBufferAttribute(pos, i);
+    geometry.attributes.uv.setXY(i, v3.length() < 4 ? 0 : 1, 1);
+  }
+const material = new THREE.MeshStandardMaterial({map:ringTexture, side:THREE.DoubleSide,color: 0xffffff,transparent: true,});
+const ring = new THREE.Mesh(geometry,material);
+ring.position.set(0,-2,0)
 
-//Sphere geometry
-const geometry2 = new THREE.SphereGeometry( 10, 16, 8 ); 
-const material2 = new THREE.MeshStandardMaterial( { color: 0xffff00,} ); 
-const sphere = new THREE.Mesh( geometry2, material2 ); scene.add( sphere );
-sphere.translateY(-5);
+ring.rotation.x = -1*Math.PI/3
+
+
+
+scene.add(ring)
+
+//Saturn geometry
+const saturnTexture = new THREE.TextureLoader().load('../resources/saturn.jpg');
+const normalTexture = new THREE.TextureLoader().load('../resources/saturnTexture.jpg');
+const geometry2 = new THREE.SphereGeometry( 3, 32, 32 ); 
+const material2 = new THREE.MeshStandardMaterial( { map: saturnTexture,} ); 
+const sphere = new THREE.Mesh( geometry2, material2 );
+scene.add( sphere );
 scene.add(sphere)
+sphere.position.set(0,-2,0)
 
 //lighting
-const pointLight = new THREE.PointLight(0xffffff)
-pointLight.position.set(5,12,0)
+const pointLight = new THREE.PointLight(0xffffff, 30)
+pointLight.castShadow = true;
+pointLight.position.set(-5, , 10)
 
 const ambientLight = new THREE.AmbientLight(0xffffff)
 
-scene.add(pointLight, ambientLight)
+scene.add(pointLight)
 
-//light helper
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// scene.add(lightHelper)
+// light helper
+const lightHelper = new THREE.PointLightHelper(pointLight)
+scene.add(lightHelper)
 
 //orbit control
 const controls = new OrbitControls(camera,renderer.domElement)
@@ -52,6 +73,23 @@ const controls = new OrbitControls(camera,renderer.domElement)
 
 window.addEventListener( 'resize', onWindowResize, false );
 animate()
+
+
+function addStar() {
+  const geometry = new THREE.SphereGeometry(0.25,20,20);
+  const material = new THREE.MeshBasicMaterial({color:0xffffff})
+  const star = new THREE.Mesh(geometry,material);
+
+  const[x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(1000));
+
+  star.position.set(x,y,z)
+  scene.add(star)
+}
+
+Array(500).fill().forEach(addStar)
+
+
+
 
 function onWindowResize() {
 				
@@ -64,14 +102,9 @@ function onWindowResize() {
 
 function animate(){
   requestAnimationFrame(animate);
-
-  torus.rotation.x+=0.01;
-  torus.rotation.y+=0.005;
-  torus.rotation.z+=0.01;
-
-  sphere.rotation.x+=0.01;
+  sphere.rotation.x+=0.003;
   sphere.rotation.y+=0.005;
-  sphere.rotation.z+=0.01;
+
 
   controls.update();
 
