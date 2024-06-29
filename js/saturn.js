@@ -57,7 +57,7 @@ sphere.position.set(0,-2,0)
 //lighting
 const pointLight = new THREE.PointLight(0xffffff, 30)
 pointLight.castShadow = true;
-pointLight.position.set(-5, , 10)
+pointLight.position.set(-5, 5, 10)
 
 const ambientLight = new THREE.AmbientLight(0xffffff)
 
