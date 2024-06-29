@@ -45,8 +45,8 @@ ring.rotation.x = -1*Math.PI/3
 scene.add(ring)
 
 //Saturn geometry
-const saturnTexture = new THREE.TextureLoader().load('./../../resources/saturn.jpg');
-const normalTexture = new THREE.TextureLoader().load('./../../resources/saturnTexture.jpg');
+const saturnTexture = new THREE.TextureLoader().load('.././resources/saturn.jpg');
+const normalTexture = new THREE.TextureLoader().load('.././resources/saturnTexture.jpg');
 const geometry2 = new THREE.SphereGeometry( 3, 32, 32 ); 
 const material2 = new THREE.MeshStandardMaterial( { map: saturnTexture,} ); 
 const sphere = new THREE.Mesh( geometry2, material2 );
