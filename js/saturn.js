@@ -18,16 +18,16 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 camera.position.set(-6, 1.5, 0)
+const xPos = camera.position.x;
+const yPos = camera.position.y;
+const zPos = camera.position.z;
 
-// axes helpers
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
 
 renderer.render(scene,camera);
 
 //Ring geometry
 const ringTexture = new THREE.TextureLoader().load('https://i.postimg.cc/zz7Gr430/saturn-rings-top.png');
-const geometry = new THREE.RingGeometry(3, 5, 64);
+const geometry = new THREE.RingGeometry(3, 5, 512);
 var pos = geometry.attributes.position;
   var v3 = new THREE.Vector3();
   for (let i = 0; i < pos.count; i++){
@@ -39,7 +39,6 @@ const ring = new THREE.Mesh(geometry,material);
 ring.position.set(0,-2,0)
 
 ring.rotation.x = -1*Math.PI/3
-
 
 
 scene.add(ring)
@@ -64,15 +63,29 @@ const ambientLight = new THREE.AmbientLight(0xffffff)
 scene.add(pointLight)
 
 // light helper
-const lightHelper = new THREE.PointLightHelper(pointLight)
-scene.add(lightHelper)
+// const lightHelper = new THREE.PointLightHelper(pointLight)
+// scene.add(lightHelper)
+// axes helpers
+// const axesHelper = new THREE.AxesHelper( 5 );
+// scene.add( axesHelper );
 
 //orbit control
-const controls = new OrbitControls(camera,renderer.domElement)
+window.addEventListener('keydown',function(e) {
+  if(e.code === "KeyS")
+  if(e.code === "KeyL")
+      controls.reset();
+});
+const controls = new OrbitControls(camera,renderer.domElement);
+controls.rotateSpeed = 1;
+controls.maxDistance = 10;
+controls.minDistance = 3;
+controls.enablePan = false;
+controls.enableDamping = true;
+
 
 
 window.addEventListener( 'resize', onWindowResize, false );
-animate()
+animate();
 
 
 function addStar() {
@@ -102,12 +115,20 @@ function onWindowResize() {
 
 function animate(){
   requestAnimationFrame(animate);
-  sphere.rotation.x+=0.003;
   sphere.rotation.y+=0.005;
 
 
+  ring.rotation.z+=0.005;
+  
+  // cameraCheck()
   controls.update();
 
   renderer.render(scene,camera);
 
+}
+
+function cameraCheck() {
+  if (xPos != Math.round(camera.position.x * 100)/100 && yPos != Math.round(camera.position.y * 100) / 100 && zPos != Math.round(camera.position.z * 100) /100){
+    controls.reset();
+  }
 }

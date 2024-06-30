@@ -2,7 +2,7 @@ import anime from '../node_modules/animejs/lib/anime.es.js';
 var textWrapper = document.querySelector('#nameHeader');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
+anime.timeline({loop: false})
   .add({
     targets: '#nameHeader .letter',
     translateY: [100,0],
@@ -11,11 +11,4 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     duration: 1400,
     delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '#nameHeader .letter',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: (el, i) => 100 + 30 * i
-  });
+  })
