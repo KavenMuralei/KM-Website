@@ -1,4 +1,4 @@
-import anime from '.././node_modules/animejs/lib/anime.es.js';
+import anime from './node_modules/animejs/lib/anime.es.js';
 var textWrapper = document.querySelector('#nameHeader');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
