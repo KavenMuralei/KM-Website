@@ -52,7 +52,6 @@ const geometry2 = new THREE.SphereGeometry( 3, 32, 32 );
 const material2 = new THREE.MeshStandardMaterial( { map: saturnTexture,} ); 
 const sphere = new THREE.Mesh( geometry2, material2 );
 scene.add( sphere );
-scene.add(sphere)
 sphere.position.set(0,-2,0)
 
 //lighting
@@ -104,7 +103,7 @@ const posArray =  new Float32Array(particlesCnt *3);
 
 
 for(let i = 0; i< particlesCnt * 3; i++){
-  posArray[i] = (Math.random() - 0.5) *50
+  posArray[i] = (Math.random() - 0.5) *150
 }
 
 particlesGeometry.setAttribute("position", new THREE.BufferAttribute(posArray,3))
@@ -162,8 +161,8 @@ function animate(){
   particleMesh.rotation.z = -.1 * elapsedTime
 
   if(mouseX>0){
-    particleMesh.rotation.x = -mouseY * (0.001)
-    particleMesh.rotation.y = mouseX * (0.001) 
+    particleMesh.rotation.x = -mouseY * (0.0005)
+    particleMesh.rotation.y = mouseX * (0.0005) 
   }
   
 

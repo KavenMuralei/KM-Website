@@ -12,6 +12,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Name and detail header */
+
+#nameHeaders{
+    position:relative;
+    top:-25%;
+}
+
 #nameHeader {
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -38,21 +45,42 @@ h3{
     -webkit-text-stroke-width: 1%;
     -webkit-text-stroke-color: black;
 }
-
-#bg {
-    position:absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
+/* Saturn Background */
 canvas{
+    z-index: -5;
     width:100%;
     object-fit: contain;
 }
 
-#nameHeaders{
-    position:relative;
-    top:-25%;
+/* Navigation bar */
+#navBar{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
 
+#navBar a{
+    color: white;
+    float:right;
+    font-size: 2vh;
+    padding: 2vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: medium;
+    text-align: center;
+    -webkit-text-stroke-width: 1%;
+    -webkit-text-stroke-color: black;
+    
+}
+#navBar h4{
+    float:left;
+    font-size: 3vh;
+    padding: 1vh;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
 }
