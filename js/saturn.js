@@ -1,4 +1,4 @@
-import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+import * as THREE from 'three';
 import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
 
 
@@ -55,7 +55,7 @@ scene.add( sphere );
 sphere.position.set(0,-2,0)
 
 //lighting
-const pointLight = new THREE.PointLight("white", 25)
+const pointLight = new THREE.PointLight("white", 0.25)
 pointLight.castShadow = true;
 pointLight.position.set(-5, 5, 10)
 
@@ -158,7 +158,7 @@ function animate(){
   requestAnimationFrame(animate);
   const elapsedTime = clock.getElapsedTime()
 
-  particleMesh.rotation.z = -.1 * elapsedTime
+  particleMesh.rotation.z = -.05 * elapsedTime
 
   if(mouseX>0){
     particleMesh.rotation.x = -mouseY * (0.0005)

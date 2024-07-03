@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!--Style CSS Import-->
+    <link rel="stylesheet" href="./base.css" type="text/css" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,14 +18,15 @@
 </head>
 
 <body>
-    <div id="navBar">
+    <div class="navBar">
         <div>
             <h4>KM</h4>
-            <a>.PROJECTS()</a>
-            <a>.ABOUTME()</a>
-            <a>.HOME()</a>
+            <a href="#projects">.PROJECTS()</a>
+            <a href="#about_me">.ABOUTME()</a>
+            <a href="#home">.HOME()</a>
         </div>
     </div>
+    <!-- JS -->
     <script type="importmap">
         {
             "imports": {
@@ -34,23 +36,33 @@
         }
     </script>
     <script src="./js/saturn.js" type="module"></script>
-    <canvas class="animate__animated animate__fadeIn" id="saturn"></canvas>
     <script src="./js/textAnimation.js" type="module"></script>
-    <div id="nameHeaders">
-        <h1 id="nameHeader">Kaven Muraleitharan</h1>
-        <h3>CS and AIML Student @ <font color="red">Carleton University</font>
-        </h3>
-    </div>
-    <!-- JS -->
-
+    <script src="./js/scroll.js" type="module"></script>
     <script type="text/javascript" src="./js/particles.min.js"></script>
     <script type="text/javascript" src="./js/custom.js"></script>
-    <div>
-        <div></div>
+
+    <!--HOME-->
+    <div data-scroll-container>
+        <section id="home" data-scroll-section>
+            <canvas class="animate__animated animate__fadeIn" id="saturn" data-scroll data-scroll-speed="2"></canvas>
+            <div class="nameHeaders">
+                <h1 class="nameHeader">Kaven Muraleitharan</h1> 
+                <h3 data-scroll>CS and AIML Student @ <font color="red">Carleton University</font>
+                </h3>
+            </div>
+        </section>
+        <section id="about_me" data-scroll-section>
+            <div class="sectionA" data-scroll data-scroll-speed="2"></div>
+            
+        </section>
+        <section id="projects" data-scroll-section>
+            <div class="sectionB" data-scroll data-scroll-speed="2"></div>
+        </section>
+        
     </div>
-    <div>
-        <div></div>
-    </div>
+
+
+
 
 </body>
 
