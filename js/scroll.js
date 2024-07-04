@@ -2,6 +2,12 @@ import LocomotiveScroll from '../node_modules/locomotive-scroll/dist/locomotive-
 
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+    smooth: true,
+    mobile: {
+        smooth:true
+    },
+    tablet: {
+        smooth:true
+    }
 });
 
