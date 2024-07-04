@@ -1,13 +1,6 @@
-import LocomotiveScroll from '../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js';
+import LocomotiveScroll from 'locomotive-scroll';
 
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    mobile: {
-        smooth:true
-    },
-    tablet: {
-        smooth:true
-    }
+    smooth: true
 });
-

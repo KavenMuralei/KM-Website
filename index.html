@@ -35,30 +35,48 @@
             }
         }
     </script>
+
     <script src="./js/saturn.js" type="module"></script>
     <script src="./js/textAnimation.js" type="module"></script>
-    <script src="./js/scroll.js" type="module"></script>
+    <!-- <script src="./js/scroll.js"></script> -->
     <script type="text/javascript" src="./js/particles.min.js"></script>
     <script type="text/javascript" src="./js/custom.js"></script>
 
     <!--HOME-->
     <div data-scroll-container>
         <section id="home">
-            <canvas class="animate__animated animate__fadeIn" id="saturn"  data-scroll data-scroll-speed="2"></canvas>
-            <div class="nameHeaders" data-scroll-section>
-                <h1 class="nameHeader">Kaven Muraleitharan</h1> 
-                <h3 data-scroll>CS and AIML Student @ <font color="red">Carleton University</font>
+            <canvas class="animate__animated animate__fadeIn" id="saturn" data-scroll data-scroll-speed="-1"></canvas>
+            <div class="nameHeaders">
+                <h1 class="nameHeader">Kaven Muraleitharan</h1>
+                <h3>CS and AIML Student @ <font color="red">Carleton University</font>
                 </h3>
             </div>
         </section>
-        <section id="about_me">
-            <div class="sectionA" data-scroll-section></div>
-            
+        <section id="about_me" data-scroll-section>
+            <div class="sectionA"></div>
+
         </section>
-        <section id="projects">
-            <div class="sectionB"data-scroll-section></div>
+        <section id="projects" data-scroll-section>
+            <div class="sectionB"></div>
         </section>
+
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script>
+        (function () {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                mobile: {
+                    smooth: true
+                },
+                tablet: {
+                    smooth: true
+                }
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
