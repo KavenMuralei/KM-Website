@@ -44,6 +44,7 @@ body::-webkit-scrollbar {
     text-transform: uppercase;
     text-align: center;
     padding-top: 15vh;
+    
 }
 
 #nameHeader .letter{
@@ -70,7 +71,7 @@ canvas{
 /* Navigation bar */
 .navBar{
     position: fixed;
-    width: 99%;
+    width: 100%;
     z-index: 1;
 }
 
@@ -78,7 +79,7 @@ canvas{
     text-decoration: none;
     color: white;
     float:right;
-    font-size: 1.5vw;
+    font-size: 3vw;
     padding: 2vh;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -87,11 +88,15 @@ canvas{
     text-align: center;
     -webkit-text-stroke-width: 1%;
     -webkit-text-stroke-color: black;
-    
 }
+@media screen and (min-width: 1200px) {
+    .navBar a {
+       font-size: 20px;
+    }
+  }
 .navBar h4{
     float:left;
-    font-size: 1.75v;
+    font-size: 3.5vw;
     padding: 1vh;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -100,6 +105,11 @@ canvas{
     text-transform: uppercase;
     text-align: center;
 }
+@media screen and (min-width: 1200px) {
+    .navBar h4 {
+        font-size: 24px;
+    }
+  }
 
 .sectionB{
     position: relative;
@@ -110,7 +120,70 @@ canvas{
 
 .sectionA{
     position: relative;
-    background-color: #1C2465;
+    background-color: #1A191D;
     width:100%;
+    bottom: 10%;
     height:100vh;
+}
+
+.topicHeader{
+    color:#fff;
+    font-size: 3vw;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: medium;
+    text-align: center;
+    -webkit-text-stroke-width: 1%;
+    -webkit-text-stroke-color: black;
+    padding: 2vh;
+    padding-top: 3vh;
+    
+}
+.skillBox{
+    width:25%;
+    height:50vh;
+    border-width:3px;
+    border-style:solid;
+    border-color:gray;
+    float: right;
+    padding: 2vh;
+    
+}
+.iconBox{
+    width:100%;
+    height:30%;
+}
+.iconBox h3{
+    z-index: 1;
+    width: 70%;
+    text-align: left;
+    float:right;
+}
+.icon{
+    z-index: 1;
+    height: 4wh;
+    width: 4vw;
+}
+.underline{
+    width:62%;
+    position: relative;
+    left:30%;
+    height:0.25em;
+}
+.textBox{
+    width:100%;
+}
+.line{
+    width: 0.25em;
+    height:25vh;
+    background-color: darkgray;
+}
+.text{
+    font-family: "Roboto Mono", sans-serif;
+    width: 20vw;
+    font-weight: 400;
+    font-size: 1.25vw;
+    color:white;
+    padding:1vw;
 }
