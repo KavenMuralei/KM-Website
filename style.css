@@ -5,7 +5,37 @@
 }
 
 /* Preloader */
+.loader{
+    position:fixed;
+    z-index: 100;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    transition: opacity 0.75s, visibility 10s;
+}
 
+.loader--hidden{
+    opacity:0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content:"";
+    width: 96px;
+    height: 96px;
+    background-image: url(./resources/saturnIcon.png);
+    animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+    from { transform: rotate(0turn)}
+    to { transform: rotate(1turn)}
+}
 
 
 
@@ -100,7 +130,7 @@ canvas{
   }
 .navBar h4{
     float:left;
-    font-size: 3.5vw;
+    font-size: 3vw;
     padding: 1vh;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -111,7 +141,7 @@ canvas{
 }
 @media screen and (min-width: 1200px) {
     .navBar h4 {
-        font-size: 24px;
+        font-size: 20px;
     }
   }
 
