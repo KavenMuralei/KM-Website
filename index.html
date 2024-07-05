@@ -5,6 +5,7 @@
     <!--Style CSS Import-->
     <link rel="stylesheet" href="./base.css" type="text/css" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="./resources/KM.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Montserrat font import -->
@@ -15,11 +16,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
         </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <title>Homepage</title>
+    <title>KM | Portfolio</title>
 </head>
 
 <body>
+    
+    <div id="loader"></div>
     <div class="navBar">
         <div>
             <h4>KM</h4>
@@ -58,11 +60,11 @@
         <section id="skills" data-scroll-section>
             <div class="sectionA">
                 <h2 class="topicHeader" data-scroll data-scroll-speed="0.">MY SKILLS</h2>
-                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; bottom: 10%;">
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; bottom: 10%;" id="saturn" data-scroll>
                     <div class="skillBox">
                         <div class="iconBox">
                             <img class="icon" src="./resources/java.png"></img>
-                            <h3>Software Development</h3>
+                            <h3>Software<br>Development</h3>
                             <div class="underline" style="    background: linear-gradient(65deg, #2C49D8 0%, #2C49D8 100%, rgba(255, 209, 0, 0) 100%);"></div>
                         </div>
                         <div class="textBox">
@@ -74,7 +76,7 @@
                     <div class="skillBox">
                         <div class="iconBox">
                             <img class="icon" src="./resources/react.png"></img>
-                            <h3>Frontend Development</h3>
+                            <h3>Frontend<br>Development</h3>
                             <div class="underline" style="background: linear-gradient(65deg, #DF058D 0%, #DF058D 100%, rgba(255, 209, 0, 0) 100%);"></div>
                         </div>
                         <div class="textBox">

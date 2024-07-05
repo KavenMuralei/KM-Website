@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+/* Preloader */
+
+
+
 
 body {
     background: #000000;  /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
@@ -141,7 +145,7 @@ canvas{
     
 }
 .skillBox{
-    width:25%;
+    width:33%;
     height:50vh;
     border-width:3px;
     border-style:solid;
@@ -150,6 +154,12 @@ canvas{
     padding: 2vh;
     
 }
+@media screen and (min-width: 1200px) {
+    .skillBox{
+        width:25%;
+    }
+  }
+
 .iconBox{
     width:100%;
     height:30%;
@@ -157,6 +167,7 @@ canvas{
 .iconBox h3{
     z-index: 1;
     width: 70%;
+    font-size: 1.5vw;
     text-align: left;
     float:right;
 }
@@ -181,9 +192,15 @@ canvas{
 }
 .text{
     font-family: "Roboto Mono", sans-serif;
-    width: 20vw;
+    width: 25vw;
     font-weight: 400;
-    font-size: 1.25vw;
+    font-size: 1.5vh;
     color:white;
-    padding:1vw;
+    padding:1em;
 }
+
+@media screen and (min-width: 1200px) {
+    .text{
+        font-size: 20px;
+    }
+  }
