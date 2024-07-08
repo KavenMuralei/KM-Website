@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!--Style CSS Import-->
@@ -14,7 +15,7 @@
     </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-        </style>
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>KM | Portfolio</title>
 </head>
@@ -22,15 +23,6 @@
 <body>
     <!-- Preloader -->
     <div class="loader"></div>
-    <script>
-        window.addEventListener("load", () =>{
-            const loader = document.querySelector(".loader")
-            loader.classList.add("loader--hidden");
-            loader.addEventListener("transitioned", () =>{
-                document.body.removeChild(loader)
-            });
-        });
-    </script>
     <!-- Nav bar -->
     <div class="navBar">
         <div>
@@ -52,34 +44,40 @@
     </script>
 
     <script src="./js/saturn.js" type="module"></script>
+
     <script src="./js/textAnimation.js" type="module"></script>
     <!-- <script src="./js/scroll.js"></script> -->
-    <script type="text/javascript" src="./js/particles.min.js"></script>
-    <script type="text/javascript" src="./js/custom.js"></script>
+
 
     <!--HOME-->
     <div data-scroll-container>
         <section id="home">
             <canvas class="animate__animated animate__fadeIn" id="saturn" data-scroll data-scroll-speed="-1"></canvas>
             <div class="nameHeaders">
-                <h1 class="nameHeader" data-scroll="" data-scroll-delay="0.18" data-scroll-speed="0.5">Kaven Muraleitharan</h1>
-                <h3 data-scroll="" data-scroll-delay="0.18" data-scroll-speed="0.5">CS and AIML Student @ <font color="red">Carleton University</font>
+                <h1 class="nameHeader" data-scroll="" data-scroll-delay="0.18" data-scroll-speed="0.5">Kaven
+                    Muraleitharan</h1>
+                <h3 data-scroll="" data-scroll-delay="0.18" data-scroll-speed="0.5">CS and AIML Student @ <font
+                        color="red">Carleton University</font>
                 </h3>
             </div>
         </section>
         <section id="skills" data-scroll-section>
             <div class="sectionA">
                 <h2 class="topicHeader" data-scroll data-scroll-speed>MY SKILLS</h2>
-                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; bottom: 10%;" id="saturn" data-scroll>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; bottom: 10%;"
+                    id="saturn" data-scroll>
                     <div class="skillBox">
                         <div class="iconBox">
                             <img class="icon" src="./resources/java.png"></img>
                             <h3>Software<br>Development</h3>
-                            <div class="underline" style="    background: linear-gradient(65deg, #2C49D8 0%, #2C49D8 100%, rgba(255, 209, 0, 0) 100%);"></div>
+                            <div class="underline"
+                                style="    background: linear-gradient(65deg, #2C49D8 0%, #2C49D8 100%, rgba(255, 209, 0, 0) 100%);">
+                            </div>
                         </div>
                         <div class="textBox">
                             <div class="line">
-                                <h4 class="text">Experienced in both functional and OOP: Java, Python, JavaScript, and PHP.</h4>
+                                <h4 class="text">Experienced in both functional and OOP: Java, Python, JavaScript, and
+                                    PHP.</h4>
                             </div>
                         </div>
                     </div>
@@ -87,11 +85,14 @@
                         <div class="iconBox">
                             <img class="icon" src="./resources/react.png"></img>
                             <h3>Frontend<br>Development</h3>
-                            <div class="underline" style="background: linear-gradient(65deg, #DF058D 0%, #DF058D 100%, rgba(255, 209, 0, 0) 100%);"></div>
+                            <div class="underline"
+                                style="background: linear-gradient(65deg, #DF058D 0%, #DF058D 100%, rgba(255, 209, 0, 0) 100%);">
+                            </div>
                         </div>
                         <div class="textBox">
                             <div class="line">
-                                <h4 class="text">3+ years of development experience in HTML, CSS, JS, and React. Proficient in implementing UI-related data in XML.</h4>
+                                <h4 class="text">3+ years of development experience in HTML, CSS, JS, and React.
+                                    Proficient in implementing UI-related data in XML.</h4>
                             </div>
                         </div>
                     </div>
@@ -99,11 +100,14 @@
                         <div class="iconBox">
                             <img class="icon" src="./resources/aws.png"></img>
                             <h3>Additional<br>Skills</h3>
-                            <div class="underline" style="    background: linear-gradient(65deg, #FF6B2B 0%, #FF6B2B 100%, rgba(255, 209, 0, 0) 100%);"></div>
+                            <div class="underline"
+                                style="background: linear-gradient(65deg, #FF6B2B 0%, #FF6B2B 100%, rgba(255, 209, 0, 0) 100%);">
+                            </div>
                         </div>
                         <div class="textBox">
                             <div class="line">
-                                <h4 class="text">Adept with control systems like Git and GitHub. Experienced with the Android SDK. Actively learning cloud utilities in AWS.</h4>
+                                <h4 class="text">Adept with control systems like Git and GitHub. Experienced with the
+                                    Android SDK. Actively learning cloud utilities in AWS.</h4>
                             </div>
                         </div>
                     </div>
@@ -113,7 +117,34 @@
         <section id="work" data-scroll-section>
             <div class="sectionB">
                 <h2 class="topicHeader" data-scroll data-scroll-speed>MY WORK</h2>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; bottom: 10%;"
+                    id="saturn" data-scroll>
+                    <button data-modal-target="#modal" class="theButton">
+                        <div>
+                            <h2>Scientific Calculator</h2><br>
+                            <h4>2022</h4>
+                            <h4 class="workBox_text">An elementary scientific calculator created with a Java Swing GUI. Utilizes object-oriented
+                                programming principles like inheritance and encapsulation.</h4>
+                            <img src="./resources/1715736392771.jpeg" class="workBox_image">
+                            <div class="workBox_Skills">
+                                <h4></h4>
+                            </div>
+                        </div>
+                        
+                    </button>
+                    <div class="modal" id="modal">
+                        <div class="modal-header">
+                            <div class="title">big!</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            its true
+                        </div>
+                    </div>
+                </div>
 
+                <div id="overlay"></div>
+                <script src="./js/webpage.js"></script>
             </div>
         </section>
 
