@@ -1,358 +1,494 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Preloader */
-.loader{
-    position:fixed;
-    z-index: 100;
-    top:0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000000;
-    transition: opacity 1s, visibility 0.75s;
+.loader {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  transition: opacity 1s, visibility 0.75s;
 }
 
-.loader--hidden{
-    opacity:0;
-    visibility: hidden;
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.loader::after{
-    content:"";
-    width: 96px;
-    height: 96px;
-    background-image: url(./resources/saturnIcon.png);
-    animation: loading 1s ease infinite;
+.loader::after {
+  content: "";
+  width: 96px;
+  height: 96px;
+  background-image: url(./resources/saturnIcon.png);
+  animation: loading 1s ease infinite;
 }
 
 @keyframes loading {
-    from { transform: rotate(0turn)}
-    to { transform: rotate(1turn)}
+  from {
+    transform: rotate(0turn)
+  }
+
+  to {
+    transform: rotate(1turn)
+  }
 }
 
 
 
 body {
-    background: #000000;  /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    font-family: Arial, Helvetica, sans-serif;
+  background: #000000;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth
 }
 
 body::-webkit-scrollbar {
-    width: 0.5em;
-  }
-  
-  body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: gray;
-    border-radius: 50px;
-    scrollbar-width: thin;
-    outline: 1px solid black;
-  }
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 50px;
+  scrollbar-width: thin;
+  outline: 1px solid black;
+}
 
 /* Name and detail header */
 
-.nameHeaders{
-    top:0;
-    left:0;
-    width:100%;
-    position: absolute;
+.nameHeaders {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .nameHeader {
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-    font-size: 5vw;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 15vh;
-    
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  font-size: 5vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 15vh;
+
 }
 
-#nameHeader .letter{
-    display: inline-block;
+#nameHeader .letter {
+  display: inline-block;
 }
 
-h3{
-    color:#fff;
-    font-size: 1.5vw;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: medium;
-    text-align: center;
-    -webkit-text-stroke-width: 1%;
-    -webkit-text-stroke-color: black;
+.nameHeaders h3 {
+  color: #fff;
+  font-size: 1.5vw;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: medium;
+  text-align: center;
+  -webkit-text-stroke-width: 1%;
+  -webkit-text-stroke-color: black;
 }
+
 /* Saturn Background */
-canvas{
-    width:99%;
-    object-fit: contain;
+canvas {
+  width: 99%;
+  object-fit: contain;
 }
 
 /* Navigation bar */
-.navBar{
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+.navBar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
-.navBar a{
-    text-decoration: none;
-    color: white;
-    float:right;
-    font-size: 3vw;
-    padding: 1vh;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: medium;
-    text-align: center;
-    -webkit-text-stroke-width: 1%;
-    -webkit-text-stroke-color: black;
+.navBar a {
+  text-decoration: none;
+  color: white;
+  float: right;
+  font-size: 3vw;
+  padding: 1vh;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: medium;
+  text-align: center;
+  -webkit-text-stroke-width: 1%;
+  -webkit-text-stroke-color: black;
+  scroll-behavior: smooth 
 }
+
 @media screen and (min-width: 1200px) {
-    .navBar a {
-       font-size: 20px;
-    }
+  .navBar a {
+    font-size: 20px;
   }
-.navBar h4{
-    float:left;
-    font-size: 3vw;
-    padding: 1vh;
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
 }
+
+.navBar h4 {
+  float: left;
+  font-size: 3vw;
+  padding: 1vh;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 @media screen and (min-width: 1200px) {
-    .navBar h4 {
-        font-size: 20px;
-    }
+  .navBar h4 {
+    font-size: 20px;
   }
-
-.sectionB{
-    position: relative;
-    background-color: #0D0D0D;
-    width:100%;
-    height:100vh;
 }
 
-.sectionA{
-    position: relative;
-    background-color: #1A191D;
-    width:100%;
-    bottom: 10%;
-    height:100vh;
+.sectionB {
+  position: relative;
+  background-color: #0D0D0D;
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth
 }
 
-.topicHeader{
-    color:#fff;
-    font-size: 3vw;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: medium;
-    text-align: center;
-    -webkit-text-stroke-width: 1%;
-    -webkit-text-stroke-color: black;
-    padding: 2vh;
-    padding-top: 3vh;
-    
+.sectionA {
+  position: relative;
+  background-color: #1A191D;
+  width: 100%;
+  bottom: 10%;
+  height: 100vh;
+  scroll-behavior: smooth
 }
-.skillBox{
-    width:33%;
-    height:45vh;
-    border-width:3px;
-    border-style:solid;
-    border-color:gray;
-    float: right;
-    padding: 2vh;
-    
+
+.topicHeader {
+  color: #fff;
+  font-size: 3vw;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: medium;
+  text-align: center;
+  -webkit-text-stroke-width: 1%;
+  -webkit-text-stroke-color: black;
+  padding: 2vh;
+  padding-top: 3vh;
+
 }
+
+.skillBox {
+  width: 33%;
+  height: 45vh;
+  border-width: 3px;
+  border-style: solid;
+  border-color: gray;
+  float: right;
+  padding: 2vh;
+
+}
+
 @media screen and (min-width: 1200px) {
-    .skillBox{
-        width:25%;
-    }
+  .skillBox {
+    width: 25%;
   }
+}
 
-.iconBox{
-    width:100%;
-    height:30%;
+.iconBox {
+  width: 100%;
+  height: 30%;
 }
-.iconBox h3{
-    z-index: 1;
-    width: 70%;
-    font-size: 1.75vw;
-    text-align: left;
-    float:right;
+
+.iconBox h3 {
+  color: white;
+  z-index: 1;
+  width: 70%;
+  font-size: 2vw;
+  text-align: left;
+  float: right;
 }
+
 @media screen and (min-height: 800px) {
-  .iconBox h3{
-      font-size: 2vw;
+  .iconBox h3 {
+    font-size: 2vw;
   }
 }
-.icon{
-    z-index: 1;
-    height: 4wh;
-    width: 4vw;
-}
-.underline{
-    width:62%;
-    position: relative;
-    left:30%;
-    height:0.25em;
-}
-.textBox{
-    width:100%;
-}
-.line{
-    width: 0.25em;
-    height:25vh;
-    background-color: darkgray;
-}
-.text{
-    font-family: "Roboto Mono", sans-serif;
-    width: 25vw;
-    font-weight: 400;
-    font-size: 1.4vh;
-    color:white;
-    padding:1em;
+
+.icon {
+  z-index: 1;
+  height: 4wh;
+  width: 4vw;
 }
 
-@media screen and (min-width: 1200px) {
-    .text{
-        font-size: 20px;
-    }
+.underline {
+  width: 62%;
+  position: relative;
+  left: 30%;
+  height: 0.25em;
 }
-@media screen and (max-height: 900px) {
-  .text{
-      width: 30vw;
+
+.textBox {
+  position: relative;
+  width: 95%;
+  float:right;
+  top:-65%;
+}
+
+.line {
+  width: 0.25em;
+  height: 25vh;
+  background-color: darkgray;
+}
+
+.text {
+  font-family: "Roboto Mono", sans-serif;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.25vw;
+  color: white;
+  padding: 1em;
+}
+@media screen and (max-width: 900px) {
+  .text {
+    font-size: 2.25vw;
   }
 }
 
 
 
 /* modal */
-*, *::after, *::before {
-    box-sizing: border-box;
-  }
-  
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background-color: white;
-    width: 500px;
-    max-width: 80%;
-  }
-  
-  .modal.active {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  
-  .modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-  }
-  
-  .modal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  
-  .modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  
-  .modal-body {
-    padding: 10px 15px;
-  }
-  
-  #overlay {
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
-  }
-  
-  #overlay.active {
-    opacity: 1;
-    pointer-events: all;
-  }
-  .theButton{
-    display: flex; 
-    align-items: top; 
-    justify-content: center;
-    border-radius: 10px;
-    position: relative;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-    
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
 
-    width: 40vh;
-    height:55vh;
-    background-color: #0D0D0D;
-    padding:1vw;
-  }
-  .theButton h2{
-    font-family: "Roboto Mono", sans-serif;
-    color: white;
-    color:#FEFCBF;
-  }
-  .workBox_image{
-    padding: 1.5vh;
-    width:40vh;
-    height:25vh;
-    border-radius: 25px;
-    
-  }
-  .workBox_Skills{
-    display: flex; 
-    border-radius: 5px;
-    width: 30%;
-    background-color: #FEFCBF;
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
 
-  }
-  .workBox_text{
-    font-family: "Roboto Mono", sans-serif;
-    font-weight: 400;
-    font-size: 1.4vh;
-    color:white;
-    padding:2em;
-    
-  }
-  .skillSection{
-    bottom:100%;
-  }
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.theButton {
+  
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  border-radius: 10px;
+  border-color: transparent;
+  width: 40vh;
+  height: 50vh;
+  background-color: #0D0D0D;
+  transition: transform .2s;
+  margin-bottom: 10%;
+  
+  margin-top: 5%;
+  
+  /* Animation */
+}
+
+.theButton:hover {
+  z-index: 1;
+  transform: scale(1.05);
+  background-color: #1F1F1F;
+  
+}
+
+.theButton h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vh;
+  color: #FEFCBF;
+}
+
+.workBox_image {
+  padding: 1.5vh;
+  width: 40vh;
+  height: 25vh;
+  border-radius: 25px;
+
+}
+
+.workBox_Skills {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  bottom: 10%;
+  padding-left: 1vw;
+}
+
+.workBox_Skills_Text {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  color: brown;
+  background-color: #FEFCBF;
+  font-size: 1.7vh;
+  border-radius: 5px;
+}
+
+.workBox_text {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  font-size: 1.4vh;
+  color: gray;
+  padding: 1vw;
+
+}
+
+.workBox_Year {
+  position: relative;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  font-size: 1.25vh;
+  color: white;
+}
+
+.skillSection {
+  bottom: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollMenu {
+  width: 90%;
+  height:70vh;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -10%;
+
+}
+
+.cover{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.cover::before{
+  position: absolute;
+  content:"";
+  left: 0;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  width:1vw;
+  background-image: linear-gradient(90deg,#0D0D0D,transparent);
+}
+.cover::after{
+  position: absolute;
+  content:"";
+  right: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width:5vw;
+  background-image: linear-gradient(-90deg,#0D0D0D,transparent);
+}
+.scroll-images{
+  width:100%;
+  height:auto;
+  display:flex;
+  justify-content: left;
+  align-items: center;
+  overflow:auto;
+  overflow-y: hidden;
+  position:relative;
+  scroll-behavior: smooth;
+}
+.child{
+  padding: 1vw;
+  cursor:pointer;
+  margin: 1px 10px;
+  overflow: hidden;
+}
+.scroll-images::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.arrow{
+  color: white;
+  background-color: transparent;
+  font-size: 3vw;
+  outline: none;
+  border: none;
+  padding: 0.5vw;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.arrow:hover{
+  color: #FEFCBF;
+  transform: scale(1.3);
+}

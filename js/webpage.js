@@ -6,6 +6,17 @@ window.addEventListener("load", () => {
     });
 });
 
+function scroll_Left(){
+  var left= document.querySelector(".scroll-images");
+  left.scrollBy (365,0)
+}
+
+function scroll_Right(){
+  var right = document.querySelector(".scroll-images");
+  right.scrollBy(-365,0)
+}
+
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
