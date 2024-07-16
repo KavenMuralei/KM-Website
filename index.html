@@ -24,7 +24,7 @@
     <!-- Preloader -->
     <div class="loader"></div>
     <!-- Nav bar -->
-    <div class="navBar">
+    <div class="navBar" id="navBar">
         <div>
             <h4>KM</h4>
             <a href="#contact">// CONTACT</a>
@@ -118,7 +118,8 @@
                 <div class="container">
                     <div class="scrollMenu">
                         <div>
-                            <button class="arrow" onclick="scroll_Right()"> << </button>
+                            <button class="arrow" onclick="scroll_Right()">
+                                << </button>
                         </div>
                         <div class="cover">
                             <div class="scroll-images">
@@ -145,7 +146,7 @@
                                     </div>
                                 </button>
 
-                                <button data-modal-target="#modal" class="theButton">
+                                <button data-modal-target="#modal3" class="theButton">
                                     <div>
                                         <h2>Minesweeper Minima</h2><br>
                                         <h3 class="workBox_Year">2024</h3>
@@ -168,14 +169,12 @@
                                     </div>
                                 </button>
 
-                                <button data-modal-target="#modal" class="theButton">
+                                <button data-modal-target="#modal2" class="theButton">
                                     <div>
                                         <h2>Scientific Calculator</h2><br>
                                         <h3 class="workBox_Year">2022</h3>
                                         <h4 class="workBox_text">An elementary scientific calculator created with a Java
-                                            Swing
-                                            GUI. Utilizes object-oriented
-                                            programming principles like inheritance and encapsulation.</h4>
+                                            Swing GUI. </h4><br><br>
                                         <img src="./resources/1715736392771.jpeg" class="workBox_image">
                                         <div class="workBox_Skills">
                                             <div style="padding-right: 1vh; padding-top: 1vh;">
@@ -215,11 +214,68 @@
                                 </button>
                                 <div class="modal" id="modal">
                                     <div class="modal-header">
-                                        <div class="title">big!</div>
-                                        <button data-close-button class="close-button">&times;</button>
+                                        <div class="title">Electronic Store</div>
+                                        <button data-close-button class="close-button"
+                                            onclick="enableScroll()">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        its true
+                                        <h4 class="text2">Built for COMP 1406 (Introduction to Computer Science II),
+                                            this
+                                            is a JavaFX
+                                            application which simulates online web store functions.</h4>
+                                        <img src="./resources/store.jpeg" style="width: 100%; height:100%;">
+                                        <h4 class="text2">This program applies Object-Oriented Programming principles to
+                                            facilitate
+                                            product organization and code reusability, significantly improving the
+                                            program's
+                                            readability and performance.</h4><br>
+                                        <h4 class="text2">This program also employs the Model-View-Controller (MVC)
+                                            design pattern to
+                                            segregate the application's concerns, enhancing the project's scalability.
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="modal" id="modal2">
+                                    <div class="modal-header">
+                                        <div class="title">Scientific Calculator</div>
+                                        <button data-close-button class="close-button"
+                                            onclick="enableScroll()">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 class="text2">This application is a elementary scientific calculator,
+                                            designed using Java Swing, a lightweight Java graphical user interface (GUI)
+                                            toolkit. This calculator is not just a simple arithmetic tool, but it’s
+                                            equipped to perform scientific computations, which may include functions
+                                            like trigonometric calculations, logarithms, and exponential functions. The
+                                            design of the calculator is based on object-oriented programming (OOP)
+                                            principles.</h4>
+                                        <img src="./resources/1715736392771.jpeg" style="width: 100%; height:100%;">
+                                        <h4 class="text2"> One of the OOP principle it utilizes is inheritance, which
+                                            allows it to derive new classes from existing ones, leading to a hierarchy
+                                            of classes that share a set of attributes and methods. Another principle it
+                                            employs is encapsulation, which involves bundling the data, and the methods
+                                            that operate on this data, into a single unit called a class, thereby hiding
+                                            the internal state of one object from other objects. This approach enhances
+                                            its modularity, making the calculator robust and easy to maintain. Overall,
+                                            this calculator is a prime example of how Java and OOP principles can be
+                                            used to create a functional and efficient scientific calculator.</h4>
+                                    </div>
+                                </div>
+                                <div class="modal" id="modal3">
+                                    <div class="modal-header">
+                                        <div class="title">Minesweeper Minima</div>
+                                        <button data-close-button class="close-button"
+                                            onclick="enableScroll()">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 class="text2">I designed and implemented a user-friendly Android
+                                            application, "Minesweeper Minima," with a clear objective to clear a 11x20
+                                            grid of tiles without triggering any of the 35 hidden mines.</h4>
+                                        <img src="./resources/1715736392771.jpeg" style="width: 100%; height:100%;">
+                                        <h4 class="text2">The project uses an intuitive interface using Java and XML in
+                                            Android Studio, ensuring in a positive user experience.
+                                            The project also utilizes a Git version control system for tracking changes in
+                                            codebase and ensuring project continuity.</h4>
                                     </div>
                                 </div>
                             </div>
