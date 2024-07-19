@@ -119,7 +119,7 @@ canvas {
   top: 0;
   z-index: 1;
   transition: top 0.3s;
-  z-index: 100000;
+  z-index: 1;
   backdrop-filter: blur(50px);
 }
 
